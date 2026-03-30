@@ -1,0 +1,26 @@
+# Cachés y builds locales de Android/Gradle
+android/.gradle/
+android/build/
+android/app/build/
+android/.idea/
+
+# iOS
+ios/build/
+ios/Pods/
+ios/DerivedData/
+
+# Expo
+.expo/
+
+# Tests y coverage
+coverage/
+__tests__/
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# Docs y configuración de desarrollo
+*.md
+docs/
+.vscode/

@@ -1,0 +1,7 @@
+# Cloudflare Pages / Wrangler — portal Vite en /web
+# Repo: https://github.com/megarifas2025-cmyk/zafra
+# En Pages: conectar el REPO completo; "Directorio raíz" = web (texto: web), no pegar URL de GitHub.
+
+name = "zafraclic-web"
+compatibility_date = "2024-11-01"
+pages_build_output_dir = "dist"

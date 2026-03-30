@@ -1,0 +1,6 @@
+# ZafraClic monorepo — Cloudflare / Wrangler
+# La web Vite vive en ./web. Si el panel pide wrangler en la raíz del repo, este archivo satisface la detección.
+# En Cloudflare Pages: conectar repo "zafra", Directorio raíz = web, Build = npm run build, Salida = dist.
+
+name = "zafraweb"
+compatibility_date = "2024-11-01"

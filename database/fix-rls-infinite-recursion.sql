@@ -1,0 +1,18 @@
+-- ===========================================================================
+-- FIX 42P17 en public.perfiles (recursión RLS)
+-- ===========================================================================
+-- Causa real: con políticas PERMISSIVE, Postgres evalúa el OR de TODAS las
+-- políticas; aunque (auth.uid()=id) sea cierto, otras políticas seguían
+-- llamando a funciones que hacían SELECT en perfiles → bucle.
+-- Solución aplicada en migraciones: políticas zafra_ceo_all,
+-- perfil_cosecha_marketplace_public y perfil_select_freight_requester_nombre
+-- usan auth.jwt() -> 'user_metadata' ->> 'rol' (sin leer perfiles).
+--
+-- Helpers get_my_* / is_zafra_ceo en SQL siguen útiles en OTRAS tablas;
+-- no uses funciones que lean perfiles dentro de políticas SOBRE perfiles.
+-- ===========================================================================
+
+-- Ver: supabase/migrations/20260326090000_perfiles_policies_jwt_no_subqueries.sql
+-- Ciclo perfiles↔cosechas: políticas en perfiles que leen cosechas + cosecha_ver_marketplace
+-- que leía perfiles vía get_my_* → 42P17. Ver:
+-- supabase/migrations/20260326120000_cosecha_ver_marketplace_no_perfiles_subquery.sql

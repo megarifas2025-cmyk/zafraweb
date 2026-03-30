@@ -1,0 +1,11 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:drawable="@color/splashscreen_background"/>
+  <item>
+    <inset
+        android:drawable="@drawable/splashscreen_logo"
+        android:insetLeft="24%"
+        android:insetTop="24%"
+        android:insetRight="24%"
+        android:insetBottom="24%"/>
+  </item>
+</layer-list>
